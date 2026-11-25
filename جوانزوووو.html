@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مركز جوانزو لصيانة السيارات الصينية والكورية واليابانية في المعادي. ميكانيكا، عفشة، كهرباء، تكييف، كشف أعطال وضبط زوايا.">
+  <meta name="theme-color" content="#111111">
+  <title>مركز جوانزو لصيانة السيارات الصينية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: #111; color: #fff; line-height: 1.7; overflow-x: hidden; padding-bottom: 64px; }
+    a { -webkit-tap-highlight-color: transparent; }
+    header { background: #181818; padding: 12px 5%; border-bottom: 2px solid #D90429; display: flex; justify-content: space-between; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 99; }
+    .logo { font-size: 1.3rem; font-weight: 900; color: #fff; text-decoration: none; white-space: nowrap; }
+    .logo span, .hero h1 span, .title span { color: #D90429; }
+    .header-btns { display: flex; gap: 8px; }
+    .btn, .btn-call, .btn-wa, .btn-call-lg, .btn-map { color: #fff; padding: 10px 14px; border-radius: 7px; text-decoration: none; font-weight: 800; display: inline-block; border: 0; cursor: pointer; font-size: .95rem; text-align: center; }
+    .btn { background: #D90429; }
+    .btn-call, .btn-call-lg { background: #0077B6; }
+    .btn-wa { background: #25D366; }
+    .btn-map { background: #EA4335; }
+    .hero { padding: 52px 5%; text-align: center; background: #1a1a1a; }
+    .hero h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); font-weight: 900; margin: 12px 0; }
+    .hero p { font-size: 1.05rem; color: #ccc; max-width: 700px; margin: 0 auto 25px; }
+    .hero .eyebrow { color: #FFB703; font-weight: 800; font-size: .95rem; margin-bottom: 5px; }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+    .section { padding: 42px 5%; max-width: 1050px; margin: auto; }
+    .title { text-align: center; font-size: 1.8rem; margin-bottom: 25px; font-weight: 900; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 15px; }
+    .card { background: #1c1c1c; padding: 22px; border-radius: 10px; border-bottom: 3px solid #D90429; text-align: center; }
+    .card h3 { color: #D90429; margin-bottom: 8px; font-size: 1.2rem; }
+    .card p { color: #ccc; font-size: .98rem; }
+    .brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 30px; }
+    .brands span { background: #222; padding: 6px 12px; border-radius: 5px; font-weight: 800; border: 1px solid #333; font-size: .9rem; }
+    .form-box { background: #1c1c1c; padding: 25px; border-radius: 10px; max-width: 540px; margin: auto; border: 1px solid #333; }
+    label { display: block; font-weight: 700; margin-top: 8px; }
+    input, select { width: 100%; padding: 12px; margin: 6px 0 14px; border-radius: 6px; border: 1px solid #444; background: #262626; color: #fff; font-size: 1rem; }
+    input:focus, select:focus { outline: 2px solid #D90429; border-color: transparent; }
+    .info { background: #222; padding: 15px; border-radius: 8px; margin-top: 15px; border-right: 4px solid #D90429; font-size: .98rem; }
+    .btn-map-sm { background: #EA4335; color: #fff; padding: 11px 14px; border-radius: 6px; text-decoration: none; font-weight: 800; display: block; text-align: center; margin-top: 10px; }
+    .phone-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .phone-btn { background: #2b2b2b; color: #fff; padding: 9px 12px; border-radius: 6px; text-decoration: none; font-weight: 800; border: 1px solid #444; direction: ltr; font-size: .95rem; flex: 1 1 145px; text-align: center; }
+    .floating-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #181818; border-top: 2px solid #D90429; display: flex; z-index: 100; }
+    .floating-bar a { flex: 1; text-align: center; padding: 13px 5px; color: #fff; text-decoration: none; font-weight: 900; font-size: .95rem; }
+    .success-msg { display: none; background: #1b4332; color: #d8f3dc; padding: 14px; border-radius: 8px; margin-top: 15px; text-align: center; font-weight: 700; border: 1px solid #2d6a4f; }
+    footer { text-align: center; padding: 22px; background: #0a0a0a; color: #999; margin-top: 30px; font-size: .9rem; }
+    button:disabled { opacity: .65; cursor: wait; }
+    @media (max-width: 520px) {
+      header { padding: 10px 3%; }
+      .logo { font-size: 1.05rem; }
+      .header-btns { gap: 5px; }
+      .header-btns a { padding: 8px 9px; font-size: .82rem; }
+      .hero { padding: 40px 4%; }
+      .section { padding: 34px 4%; }
+      .form-box { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">مركز <span>جوانزو</span></a>
+    <div class="header-btns">
+      <a href="tel:01289975315" class="btn-call">📞 اتصل الآن</a>
+      <a href="https://wa.me/201007509443" class="btn" style="background:#25D366;">📲 واتساب</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">متخصصون في السيارات الصينية والكورية واليابانية</p>
+      <h1>مركز <span>جوانزو</span> لصيانة السيارات الصينية</h1>
+      <p>خدمة صيانة متكاملة تشمل الميكانيكا، العفشة، الكهرباء، التكييف، وضبط الزوايا والاتزان بأجهزة كشف الأعطال.</p>
+
+      <div class="hero-actions">
+        <a href="#book" class="btn-wa">سجل بياناتك للحجز 📲</a>
+        <a href="tel:01289975315" class="btn-call-lg">اتصال مباشر 📞</a>
+        <a href="https://maps.app.goo.gl/sBbKE6ks5iakmhnG6?g_st=ac" target="_blank" rel="noopener" class="btn-map">موقعنا على الخريطة 📍</a>
+      </div>
+
+      <div class="brands">
+        <span>MG</span><span>CHERY</span><span>BYD</span><span>JETOUR</span><span>GEELY</span><span>HYUNDAI</span><span>KIA</span><span>TOYOTA</span><span>NISSAN</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">خدمات <span>المركز</span></h2>
+      <div class="grid">
+        <div class="card"><h3>💻 كشف أعطال بالكمبيوتر</h3><p>فحص أنظمة السيارة بأجهزة كشف الأعطال لتحديد المشكلة بدقة.</p></div>
+        <div class="card"><h3>❄️ صيانة وشحن التكييف</h3><p>شحن فريون، كشف تسريبات، وفحص دورة التكييف لضمان كفاءة التبريد.</p></div>
+        <div class="card"><h3>🎯 ضبط زوايا واتزان</h3><p>ضبط زوايا العجل والاتزان لضمان ثبات السيارة وتقليل تآكل الإطارات.</p></div>
+        <div class="card"><h3>🔧 ميكانيكا وعفشة</h3><p>صيانة المحركات، تغيير الزيوت والفلاتر، وفحص وإصلاح العفشة.</p></div>
+        <div class="card"><h3>⚡ كهرباء وبرمجة</h3><p>فحص الحساسات والدوائر الكهربائية وبرمجة الأنظمة حسب نوع السيارة.</p></div>
+      </div>
+    </section>
+
+    <section id="book" class="section">
+      <h2 class="title">احجز <span>موعدك</span> الآن</h2>
+      <div class="form-box">
+        <form id="bookingForm">
+          <label for="custName">الاسم بالكامل</label>
+          <input type="text" id="custName" name="name" placeholder="اكتب اسمك هنا" autocomplete="name" required>
+
+          <label for="custPhone">رقم الموبايل</label>
+          <input type="tel" id="custPhone" name="phone" placeholder="مثال: 01xxxxxxxxx" inputmode="tel" autocomplete="tel" pattern="[0-9+٠-٩۰-۹\s-]{8,20}" required>
+
+          <label for="custCar">نوع وموديل السيارة</label>
+          <input type="text" id="custCar" name="car" placeholder="مثال: MG 5 موديل 2022" required>
+
+          <label for="custSrv">الخدمة المطلوبة</label>
+          <select id="custSrv" name="service" required>
+            <option value="كشف أعطال بالكمبيوتر">كشف أعطال بالكمبيوتر</option>
+            <option value="صيانة وشحن تكييف">صيانة وشحن تكييف</option>
+            <option value="ضبط زوايا واتزان">ضبط زوايا واتزان</option>
+            <option value="صيانة ميكانيكا وعفشة">صيانة ميكانيكا وعفشة</option>
+            <option value="كهرباء وبرمجة">كهرباء وبرمجة</option>
+          </select>
+
+          <button type="submit" id="submitBtn" class="btn" style="width:100%;font-size:1.1rem;background:#25D366;padding:14px;">إرسال البيانات عبر واتساب 📲</button>
+        </form>
+
+        <div id="successBox" class="success-msg" role="status" aria-live="polite">
+          تم تجهيز رسالة الحجز. أكمل إرسالها من داخل واتساب بالضغط على زر الإرسال.
+        </div>
+
+        <div class="info">
+          <strong>📍 العنوان:</strong>
+          المعادي - طريق الأوتوستراد - أسفل كوبري الدائري - بجوار وحدة مرور البساتين (شارع 306، البساتين الشرقية).
+          <a href="https://maps.app.goo.gl/sBbKE6ks5iakmhnG6?g_st=ac" target="_blank" rel="noopener" class="btn-map-sm">📍 افتح الاتجاهات على خرائط جوجل</a>
+        </div>
+
+        <div class="info">
+          <strong>📞 اضغط على أي رقم للاتصال المباشر:</strong>
+          <div class="phone-grid">
+            <a href="tel:01289975315" class="phone-btn">📞 01289975315</a>
+            <a href="tel:01007509443" class="phone-btn">📞 01007509443</a>
+            <a href="tel:01066551177" class="phone-btn">📞 01066551177</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>جميع الحقوق محفوظة © مركز جوانزو لصيانة السيارات الصينية</footer>
+
+  <nav class="floating-bar" aria-label="روابط سريعة">
+    <a href="tel:01289975315" style="background:#0077B6;">📞 اتصال</a>
+    <a href="https://wa.me/201007509443" style="background:#25D366;">📲 واتساب</a>
+    <a href="https://maps.app.goo.gl/sBbKE6ks5iakmhnG6?g_st=ac" target="_blank" rel="noopener" style="background:#EA4335;">📍 الخريطة</a>
+  </nav>
+
+  <script>
+    const WHATSAPP_NUMBER = "201007509443"; // رقم المركز بصيغة دولية: 20 ثم الرقم بدون الصفر الأول
+
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const car = document.getElementById("custCar").value.trim();
+      const service = document.getElementById("custSrv").value;
+      const button = document.getElementById("submitBtn");
+
+      if (!name || !phone || !car) {
+        this.reportValidity();
+        return;
+      }
+
+      const message =
+        "السلام عليكم مركز جوانزو، طلب حجز جديد:%0A" +
+        "الاسم: " + encodeURIComponent(name) + "%0A" +
+        "الموبايل: " + encodeURIComponent(phone) + "%0A" +
+        "السيارة: " + encodeURIComponent(car) + "%0A" +
+        "الخدمة: " + encodeURIComponent(service);
+
+      const whatsappURL = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
+
+      document.getElementById("successBox").style.display = "block";
+      button.textContent = "جاري فتح واتساب...";
+      button.disabled = true;
+
+      const newWindow = window.open(whatsappURL, "_blank", "noopener,noreferrer");
+      if (!newWindow) {
+        window.location.href = whatsappURL;
+      }
+
+      window.setTimeout(function () {
+        button.textContent = "إرسال البيانات عبر واتساب 📲";
+        button.disabled = false;
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
